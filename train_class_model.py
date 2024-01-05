@@ -208,8 +208,8 @@ def train(model, train_label_file, valid_label_file, save, n_epochs=800, batch_s
 
 
 if __name__ == "__main__":
-    train_label_file = "./data/neizi.csv"
-    valid_label_file = "./data/neizi.csv"
+    train_label_file = "./data/train.csv"
+    valid_label_file = "./data/valid.csv"
     save_pth = "/data/feituai/eyelid_screen/ckpts/neizi_class/"
     if not os.path.exists(save_pth):
         os.makedirs(save_pth)
