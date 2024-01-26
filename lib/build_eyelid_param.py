@@ -314,37 +314,3 @@ if __name__ == "__main__":
                         cv2.imwrite(os.path.join(part_path, "r_waizi.png"), right_waizi_img)
             except cv2.error:
                 print(f)
-
-    """
-        df = pd.DataFrame(columns=["fname", "left_iris", "left_mrd1", "left_mrd2", "left_pf",
-                                   "right_iris", "right_mrd1", "right_mrd2", "right_pf", "scale"])
-        for f in flist:
-            img_file = os.path.join(ORIGIN_PATH, f)
-            fname = os.path.splitext(f)[0]
-            msk_file = os.path.join(LABEL_PATH, fname + ".json")
-
-            if os.path.exists(msk_file):
-                try:
-                    face = ManualLabel(img_file, msk_file)
-                    scale = face.scale
-                    eye_param = face.calcMrd()
-                    tmp_df = pd.DataFrame(data={"fname": fname,
-                                                "left_iris": face.left_iris,
-                                                "left_mrd1": eye_param["left_eye"][0],
-                                                "left_mrd2": eye_param["left_eye"][1],
-                                                "left_pf": eye_param["left_eye"][2],
-                                                "right_iris": face.right_iris,
-                                                "right_mrd1": eye_param["right_eye"][0],
-                                                "right_mrd2": eye_param["right_eye"][1],
-                                                "right_pf": eye_param["right_eye"][2],
-                                                "scale": scale},
-                                          index=[0])
-                    df = df.append(tmp_df, ignore_index=True, sort=False)
-                except IndexError:
-                    print(img_file)
-                    print(traceback.format_exc())
-                # print(face.face_img.shape)
-                # face.outputLabelMap(os.path.join(VISION_PATH, f))
-
-        df.to_excel(CLS_DF_FILE, index=False)
-    """
